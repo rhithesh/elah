@@ -1,0 +1,88 @@
+{
+  "name": "@elah/core",
+  "version": "1.0.0",
+  "description": "Framework-agnostic video timeline engine — playback, frame resolution, WebGL2 renderer, and media management",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./engine": {
+      "types": "./dist/engine.d.ts",
+      "import": "./dist/engine.js",
+      "default": "./dist/engine.js"
+    },
+    "./spec": {
+      "types": "./dist/spec/index.d.ts",
+      "import": "./dist/spec/index.js",
+      "default": "./dist/spec/index.js"
+    },
+    "./html": {
+      "types": "./dist/vector/html/index.d.ts",
+      "import": "./dist/vector/html/index.js",
+      "default": "./dist/vector/html/index.js"
+    },
+    "./ops": {
+      "types": "./dist/ops/index.d.ts",
+      "import": "./dist/ops/index.js",
+      "default": "./dist/ops/index.js"
+    },
+    "./icons": {
+      "types": "./dist/icons/index.d.ts",
+      "import": "./dist/icons/index.js",
+      "default": "./dist/icons/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "fonts",
+    "README.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.build.json && node scripts/fix-worker-specifier.mjs"
+  },
+  "keywords": [
+    "video-editor",
+    "timeline",
+    "video-engine",
+    "webgl",
+    "webgl2",
+    "gpu-renderer",
+    "playback",
+    "frame-accurate",
+    "media",
+    "export",
+    "mp4",
+    "typescript",
+    "browser",
+    "react"
+  ],
+  "homepage": "https://www.elah.dev",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elahlabs/elah.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elahlabs/elah/issues"
+  },
+  "license": "Apache-2.0",
+  "dependencies": {
+    "immer": "^10.1.1",
+    "mediabunny": "^1.50.8",
+    "zustand": "^5.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.6"
+  }
+}
